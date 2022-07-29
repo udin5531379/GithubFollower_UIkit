@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27DC6F9F28935E2500951D44 /* EmptyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6F9E28935E2500951D44 /* EmptyVC.swift */; };
 		27F78648287164640017259A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F78647287164640017259A /* AppDelegate.swift */; };
 		27F7864A287164640017259A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F78649287164640017259A /* SceneDelegate.swift */; };
 		27F7864C287164640017259A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7864B287164640017259A /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27DC6F9E28935E2500951D44 /* EmptyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyVC.swift; sourceTree = "<group>"; };
 		27F78644287164640017259A /* iOS_Interview_Prep_2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Interview_Prep_2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F78647287164640017259A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27F78649287164640017259A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				27F7865D287225BD0017259A /* FavoritesListVC.swift */,
 				27F7865B2872251C0017259A /* SearchVC.swift */,
 				27F78669287688D10017259A /* URAlertViewViewController.swift */,
+				27DC6F9E28935E2500951D44 /* EmptyVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27DC6F9F28935E2500951D44 /* EmptyVC.swift in Sources */,
 				27F7867A2877D8440017259A /* ErrorMessages.swift in Sources */,
 				27F78671287776650017259A /* User.swift in Sources */,
 				27F7865C2872251C0017259A /* SearchVC.swift in Sources */,
