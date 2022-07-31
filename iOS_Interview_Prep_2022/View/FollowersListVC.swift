@@ -18,6 +18,7 @@ class FollowersListVC: UIViewController {
     
     var page = 1
     var hasMoreFollowers = true
+    var isSearchBarActive = false
     
     init(username: String) {
         self.username = username
@@ -79,6 +80,7 @@ class FollowersListVC: UIViewController {
             switch result {
                 
             case .success(let followers):
+                
                 if followers.count < 100 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
                 
@@ -150,11 +152,23 @@ extension FollowersListVC: UICollectionViewDelegate {
         }
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let activeArray = isSearchBarActive ? filteredFollowers : followers
+        let itemTapFollower = activeArray[indexPath.item]
+        
+        let destinationVC = UserInfoVC(username: itemTapFollower.login)
+        let navigationVC = UINavigationController(rootViewController: destinationVC)
+        present(navigationVC, animated: true)
+    }
+    
 }
 
 extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) { //this function is going to trigger after each word that we type in the searchfield
+        
+        isSearchBarActive = true
         
         guard let filtered = searchController.searchBar.text, !filtered.isEmpty else { return }
         
@@ -163,6 +177,8 @@ extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearchBarActive = false
+        
         updateData(followers: self.followers)
     }
     
