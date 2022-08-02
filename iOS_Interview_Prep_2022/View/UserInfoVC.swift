@@ -20,17 +20,28 @@ class UserInfoVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewSettings()
+        manageNetwork(username: username)
+     }
+    
+    
+    func viewSettings() {
         view.backgroundColor = .systemMint
         
         let barButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    @objc func dismissVC(){
+        dismiss(animated: true)
+    }
+    
+    func manageNetwork(username: String) {
         
-        print(username)
         NetworkManager.shared.getUser(username: username) { result in
+            
             switch result {
             case .success(let user):
                 print(user)
@@ -39,12 +50,8 @@ class UserInfoVC: UIViewController {
                 self.presentURAlertViewControllerOnTheMainThread(title: "Something is wrong", body: error.rawValue, buttonTitle: "OK")
             }
         }
+        
     }
-    
-    @objc func dismissVC(){
-        dismiss(animated: true)
-    }
-    
     
 
 }

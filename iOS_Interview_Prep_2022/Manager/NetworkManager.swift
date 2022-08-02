@@ -91,7 +91,8 @@ class NetworkManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let user = try decoder.decode(User.self, from: data)
                 completed(.success(user))
-            } catch {
+            } catch let jsonError as NSError {
+                print(jsonError)
                 completed(.failure(.failedDecode))
             }
             
