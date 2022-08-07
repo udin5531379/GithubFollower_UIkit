@@ -157,6 +157,7 @@ extension FollowersListVC: UICollectionViewDelegate {
         let activeArray = isSearchBarActive ? filteredFollowers : followers
         let itemTapFollower = activeArray[indexPath.item]
         
+        print(itemTapFollower)
         let destinationVC = UserInfoVC(username: itemTapFollower.login)
         let navigationVC = UINavigationController(rootViewController: destinationVC)
         present(navigationVC, animated: true)
@@ -168,9 +169,9 @@ extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) { //this function is going to trigger after each word that we type in the searchfield
         
-        isSearchBarActive = true
-        
         guard let filtered = searchController.searchBar.text, !filtered.isEmpty else { return }
+        
+        isSearchBarActive = true
         
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filtered.lowercased()) }
         updateData(followers: filteredFollowers)

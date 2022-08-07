@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		27DC6F9F28935E2500951D44 /* EmptyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6F9E28935E2500951D44 /* EmptyVC.swift */; };
 		27DC6FA128958F7E00951D44 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6FA028958F7E00951D44 /* UserInfoVC.swift */; };
+		27DC6FA4289B77C600951D44 /* SecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6FA3289B77C600951D44 /* SecondaryTitleLabel.swift */; };
+		27DC6FA6289CCC2300951D44 /* URUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6FA5289CCC2300951D44 /* URUserInfoHeaderVC.swift */; };
+		27DC6FA8289EC99D00951D44 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6FA7289EC99D00951D44 /* SFSymbols.swift */; };
 		27F78648287164640017259A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F78647287164640017259A /* AppDelegate.swift */; };
 		27F7864A287164640017259A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F78649287164640017259A /* SceneDelegate.swift */; };
 		27F7864C287164640017259A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7864B287164640017259A /* ViewController.swift */; };
@@ -35,6 +38,9 @@
 /* Begin PBXFileReference section */
 		27DC6F9E28935E2500951D44 /* EmptyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyVC.swift; sourceTree = "<group>"; };
 		27DC6FA028958F7E00951D44 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		27DC6FA3289B77C600951D44 /* SecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		27DC6FA5289CCC2300951D44 /* URUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URUserInfoHeaderVC.swift; sourceTree = "<group>"; };
+		27DC6FA7289EC99D00951D44 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		27F78644287164640017259A /* iOS_Interview_Prep_2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Interview_Prep_2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F78647287164640017259A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27F78649287164640017259A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27DC6FA2289B770700951D44 /* User Profile Views  */ = {
+			isa = PBXGroup;
+			children = (
+				27DC6FA5289CCC2300951D44 /* URUserInfoHeaderVC.swift */,
+			);
+			path = "User Profile Views ";
+			sourceTree = "<group>";
+		};
 		27F7863B287164630017259A = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +104,7 @@
 		27F78646287164640017259A /* iOS_Interview_Prep_2022 */ = {
 			isa = PBXGroup;
 			children = (
+				27DC6FA2289B770700951D44 /* User Profile Views  */,
 				27F786782877D8300017259A /* Utils */,
 				27F786752877CE280017259A /* Extensions */,
 				27F786722877967E0017259A /* Manager */,
@@ -128,6 +143,7 @@
 				27F78665287629580017259A /* URTitleLabel.swift */,
 				27F78667287680F00017259A /* URBodyLabel.swift */,
 				27F7867E287A0E9E0017259A /* URAvatarImageView.swift */,
+				27DC6FA3289B77C600951D44 /* SecondaryTitleLabel.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -162,6 +178,7 @@
 			children = (
 				27F786792877D8440017259A /* ErrorMessages.swift */,
 				27F7868028846FC80017259A /* UIHelperFiles.swift */,
+				27DC6FA7289EC99D00951D44 /* SFSymbols.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -257,11 +274,14 @@
 				27F78648287164640017259A /* AppDelegate.swift in Sources */,
 				27DC6FA128958F7E00951D44 /* UserInfoVC.swift in Sources */,
 				27F7866F287776590017259A /* Follower.swift in Sources */,
+				27DC6FA6289CCC2300951D44 /* URUserInfoHeaderVC.swift in Sources */,
 				27F7866028734D5B0017259A /* URButton.swift in Sources */,
 				27F7868128846FC80017259A /* UIHelperFiles.swift in Sources */,
 				27F7867F287A0E9E0017259A /* URAvatarImageView.swift in Sources */,
 				27F786772877CE430017259A /* Extensions.swift in Sources */,
 				27F78674287796900017259A /* NetworkManager.swift in Sources */,
+				27DC6FA4289B77C600951D44 /* SecondaryTitleLabel.swift in Sources */,
+				27DC6FA8289EC99D00951D44 /* SFSymbols.swift in Sources */,
 				27F78662287489CE0017259A /* URTextField.swift in Sources */,
 				27F7866A287688D10017259A /* URAlertViewViewController.swift in Sources */,
 				27F7864A287164640017259A /* SceneDelegate.swift in Sources */,
