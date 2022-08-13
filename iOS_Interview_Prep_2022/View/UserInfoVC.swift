@@ -12,6 +12,7 @@ class UserInfoVC: UIViewController {
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
+    let dateLabel = URBodyLabel(textAlignment: .center)
     
     var itemViews : [UIView] = []
     
@@ -57,6 +58,7 @@ class UserInfoVC: UIViewController {
                     self.add(childVC: URUserInfoHeaderVC(user: user), to: self.headerView)
                     self.add(childVC: URItemInfoRepoSubClass(user: user), to: self.itemViewOne)
                     self.add(childVC: URItemInfoFollowerSubClass(user: user), to: self.itemViewTwo)
+                    self.dateLabel.text = "Github since \(user.createdAt.strToDateAndDatetoStr())"
                 }
             case .failure(let error):
                 self.presentURAlertViewControllerOnTheMainThread(title: "Something is wrong", body: error.rawValue, buttonTitle: "OK")
@@ -66,7 +68,7 @@ class UserInfoVC: UIViewController {
     }
     
     func layoutHeaderView() {
-        itemViews = [headerView, itemViewOne, itemViewTwo]
+        itemViews = [headerView, itemViewOne, itemViewTwo, dateLabel]
         
         for itemView in itemViews {
             view.addSubview(itemView)
@@ -87,7 +89,12 @@ class UserInfoVC: UIViewController {
             itemViewTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             itemViewTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: 10),
-            itemViewTwo.heightAnchor.constraint(equalToConstant: 180)
+            itemViewTwo.heightAnchor.constraint(equalToConstant: 180),
+            
+            dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: 15),
+            dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -15),
+            dateLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     

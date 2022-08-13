@@ -54,12 +54,12 @@ class URItemInfoSuperClass: UIViewController {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             stackView.heightAnchor.constraint(equalToConstant: 50),
             
-            actionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
-            actionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            actionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
+            actionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             actionButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }

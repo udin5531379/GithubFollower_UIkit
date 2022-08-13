@@ -70,11 +70,11 @@ class URItemInfoVC: UIView {
             
         case .repos:
             symbolImageView.image = UIImage(systemName: SFSymbols.repos)
-            titleLabel.text = "Repos"
+            titleLabel.text = "Public Repos"
             
         case .gists:
             symbolImageView.image = UIImage(systemName: SFSymbols.gists)
-            titleLabel.text = "Gists"
+            titleLabel.text = "Public Gists"
             
         case .followers:
             symbolImageView.image = UIImage(systemName: SFSymbols.followers)
