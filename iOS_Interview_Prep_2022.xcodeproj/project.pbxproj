@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		273D5DA028A2348800D35E57 /* URItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D5D9F28A2348800D35E57 /* URItemInfoVC.swift */; };
+		273D5DA228A6A5D900D35E57 /* URItemInfoSuperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D5DA128A6A5D900D35E57 /* URItemInfoSuperClass.swift */; };
+		273D5DA428A6B68300D35E57 /* URItemInfoRepoSubClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D5DA328A6B68300D35E57 /* URItemInfoRepoSubClass.swift */; };
+		273D5DA628A6BDC600D35E57 /* URItemInfoFollowerSubClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D5DA528A6BDC600D35E57 /* URItemInfoFollowerSubClass.swift */; };
 		27DC6F9F28935E2500951D44 /* EmptyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6F9E28935E2500951D44 /* EmptyVC.swift */; };
 		27DC6FA128958F7E00951D44 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6FA028958F7E00951D44 /* UserInfoVC.swift */; };
 		27DC6FA4289B77C600951D44 /* SecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6FA3289B77C600951D44 /* SecondaryTitleLabel.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		273D5D9F28A2348800D35E57 /* URItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URItemInfoVC.swift; sourceTree = "<group>"; };
+		273D5DA128A6A5D900D35E57 /* URItemInfoSuperClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URItemInfoSuperClass.swift; sourceTree = "<group>"; };
+		273D5DA328A6B68300D35E57 /* URItemInfoRepoSubClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URItemInfoRepoSubClass.swift; sourceTree = "<group>"; };
+		273D5DA528A6BDC600D35E57 /* URItemInfoFollowerSubClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URItemInfoFollowerSubClass.swift; sourceTree = "<group>"; };
 		27DC6F9E28935E2500951D44 /* EmptyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyVC.swift; sourceTree = "<group>"; };
 		27DC6FA028958F7E00951D44 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		27DC6FA3289B77C600951D44 /* SecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryTitleLabel.swift; sourceTree = "<group>"; };
@@ -81,6 +89,10 @@
 			isa = PBXGroup;
 			children = (
 				27DC6FA5289CCC2300951D44 /* URUserInfoHeaderVC.swift */,
+				273D5D9F28A2348800D35E57 /* URItemInfoVC.swift */,
+				273D5DA128A6A5D900D35E57 /* URItemInfoSuperClass.swift */,
+				273D5DA328A6B68300D35E57 /* URItemInfoRepoSubClass.swift */,
+				273D5DA528A6BDC600D35E57 /* URItemInfoFollowerSubClass.swift */,
 			);
 			path = "User Profile Views ";
 			sourceTree = "<group>";
@@ -261,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				273D5DA028A2348800D35E57 /* URItemInfoVC.swift in Sources */,
 				27DC6F9F28935E2500951D44 /* EmptyVC.swift in Sources */,
+				273D5DA228A6A5D900D35E57 /* URItemInfoSuperClass.swift in Sources */,
 				27F7867A2877D8440017259A /* ErrorMessages.swift in Sources */,
 				27F78671287776650017259A /* User.swift in Sources */,
 				27F7865C2872251C0017259A /* SearchVC.swift in Sources */,
@@ -269,12 +283,14 @@
 				27F786642876085F0017259A /* FollowersListVC.swift in Sources */,
 				27F78666287629580017259A /* URTitleLabel.swift in Sources */,
 				27F7865E287225BD0017259A /* FavoritesListVC.swift in Sources */,
+				273D5DA628A6BDC600D35E57 /* URItemInfoFollowerSubClass.swift in Sources */,
 				27F7867D287A09F10017259A /* FollowerCell.swift in Sources */,
 				27F78668287680F10017259A /* URBodyLabel.swift in Sources */,
 				27F78648287164640017259A /* AppDelegate.swift in Sources */,
 				27DC6FA128958F7E00951D44 /* UserInfoVC.swift in Sources */,
 				27F7866F287776590017259A /* Follower.swift in Sources */,
 				27DC6FA6289CCC2300951D44 /* URUserInfoHeaderVC.swift in Sources */,
+				273D5DA428A6B68300D35E57 /* URItemInfoRepoSubClass.swift in Sources */,
 				27F7866028734D5B0017259A /* URButton.swift in Sources */,
 				27F7868128846FC80017259A /* UIHelperFiles.swift in Sources */,
 				27F7867F287A0E9E0017259A /* URAvatarImageView.swift in Sources */,

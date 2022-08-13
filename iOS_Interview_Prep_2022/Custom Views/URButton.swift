@@ -31,4 +31,9 @@ class URButton: UIButton {
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .current)
         translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    func set(backgroundColor: UIColor, titleLable: String){
+        self.backgroundColor = backgroundColor
+        self.setTitle(titleLable, for: .normal)
+    }
 }

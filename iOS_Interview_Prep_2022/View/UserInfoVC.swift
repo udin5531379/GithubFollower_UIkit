@@ -10,8 +10,13 @@ import UIKit
 class UserInfoVC: UIViewController {
     
     let headerView = UIView()
-    var username: String
+    let itemViewOne = UIView()
+    let itemViewTwo = UIView()
     
+    var itemViews : [UIView] = []
+    
+    
+    var username: String
     init(username: String) {
         self.username = username
         super.init(nibName: nil, bundle: nil)
@@ -50,6 +55,8 @@ class UserInfoVC: UIViewController {
             case .success(let user):
                 DispatchQueue.main.async {
                     self.add(childVC: URUserInfoHeaderVC(user: user), to: self.headerView)
+                    self.add(childVC: URItemInfoRepoSubClass(user: user), to: self.itemViewOne)
+                    self.add(childVC: URItemInfoFollowerSubClass(user: user), to: self.itemViewTwo)
                 }
             case .failure(let error):
                 self.presentURAlertViewControllerOnTheMainThread(title: "Something is wrong", body: error.rawValue, buttonTitle: "OK")
@@ -59,15 +66,28 @@ class UserInfoVC: UIViewController {
     }
     
     func layoutHeaderView() {
+        itemViews = [headerView, itemViewOne, itemViewTwo]
         
-        view.addSubview(headerView)
-        headerView.translatesAutoresizingMaskIntoConstraints = false
+        for itemView in itemViews {
+            view.addSubview(itemView)
+            itemView.translatesAutoresizingMaskIntoConstraints = false
+        }
         
         NSLayoutConstraint.activate([
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 230)
+            headerView.heightAnchor.constraint(equalToConstant: 230),
+            
+            itemViewOne.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            itemViewOne.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 10),
+            itemViewOne.heightAnchor.constraint(equalToConstant: 180),
+            
+            itemViewTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            itemViewTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: 10),
+            itemViewTwo.heightAnchor.constraint(equalToConstant: 180)
         ])
     }
     

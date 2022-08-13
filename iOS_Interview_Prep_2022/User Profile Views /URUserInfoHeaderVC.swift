@@ -62,10 +62,10 @@ class URUserInfoHeaderVC: UIViewController {
         locationImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
-            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 90),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 90),
+            avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 15),
+            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 110),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 110),
             
             usernameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
             usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
