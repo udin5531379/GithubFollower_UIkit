@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol UserInfoVCDelegate {
+    
+    func didSelectGithubProfile()
+    func didSelectGetFollowers()
+    
+}
+
 class UserInfoVC: UIViewController {
     
     let headerView = UIView()
@@ -55,16 +62,27 @@ class UserInfoVC: UIViewController {
             switch result {
             case .success(let user):
                 DispatchQueue.main.async {
-                    self.add(childVC: URUserInfoHeaderVC(user: user), to: self.headerView)
-                    self.add(childVC: URItemInfoRepoSubClass(user: user), to: self.itemViewOne)
-                    self.add(childVC: URItemInfoFollowerSubClass(user: user), to: self.itemViewTwo)
-                    self.dateLabel.text = "Github since \(user.createdAt.strToDateAndDatetoStr())"
+                    self.childVCConfiguration(user: user)
                 }
             case .failure(let error):
                 self.presentURAlertViewControllerOnTheMainThread(title: "Something is wrong", body: error.rawValue, buttonTitle: "OK")
             }
         }
         
+    }
+    
+    func childVCConfiguration(user: User){
+        self.add(childVC: URUserInfoHeaderVC(user: user), to: self.headerView)
+        
+        let infoRepo = URItemInfoRepoSubClass(user: user)
+        infoRepo.delegate = self
+        self.add(childVC: infoRepo, to: self.itemViewOne)
+        
+        let infoFollower = URItemInfoFollowerSubClass(user: user)
+        infoFollower.delegate = self
+        self.add(childVC: infoFollower, to: self.itemViewTwo)
+        
+        self.dateLabel.text = "Github since \(user.createdAt.strToDateAndDatetoStr())"
     }
     
     func layoutHeaderView() {
@@ -105,4 +123,18 @@ class UserInfoVC: UIViewController {
         childVC.didMove(toParent: self)
     }
 
+}
+
+extension UserInfoVC: UserInfoVCDelegate {
+    
+    func didSelectGithubProfile() {
+        //webkit
+    }
+    
+    func didSelectGetFollowers() {
+        //dismiss the VC and show the followers
+        print("did select Get follower tapped")
+    }
+    
+    
 }

@@ -19,4 +19,13 @@ class URItemInfoRepoSubClass: URItemInfoSuperClass {
         itemInfoVcTwo.set(itemInfoType: .gists, withCount: user.publicGists)
         actionButton.set(backgroundColor: .systemPurple, titleLable: "Github Profile")
     }
+    
+    private func actionButtonPressed(){
+        actionButton.addTarget(self, action: #selector(buttonPressedAction), for: .touchUpInside)
+    }
+    
+    @objc func buttonPressedAction(){
+        delegate?.didSelectGithubProfile()
+    }
+    
 }
