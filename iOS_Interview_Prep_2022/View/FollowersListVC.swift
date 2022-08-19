@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FollowerListVCDelegate: AnyObject {
+    func getUsernameFromUserInfoVC(username: String)
+}
+
 class FollowersListVC: UIViewController {
     
     private var collectionView: UICollectionView! //We are declaring it in viewDidLoad hence using the bang operator
@@ -159,6 +163,7 @@ extension FollowersListVC: UICollectionViewDelegate {
         
         print(itemTapFollower)
         let destinationVC = UserInfoVC(username: itemTapFollower.login)
+        destinationVC.delegate = self
         let navigationVC = UINavigationController(rootViewController: destinationVC)
         present(navigationVC, animated: true)
     }
@@ -183,5 +188,19 @@ extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
         updateData(followers: self.followers)
     }
     
+    
+}
+
+extension FollowersListVC: FollowerListVCDelegate {
+    
+    func getUsernameFromUserInfoVC(username: String) {
+        self.username = username
+        title = username
+        page = 1
+        followers.removeAll()
+        filteredFollowers.removeAll()
+        collectionView.setContentOffset(.zero, animated: true)
+        manageNetwork(username: username, page: page)
+    }
     
 }

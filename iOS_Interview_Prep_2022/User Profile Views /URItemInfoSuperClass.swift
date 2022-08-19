@@ -14,7 +14,7 @@ class URItemInfoSuperClass: UIViewController {
     let itemInfoVcTwo = URItemInfoVC()
     let actionButton = URButton()
     
-    var delegate: UserInfoVCDelegate?
+    weak var delegate: UserInfoVCDelegate?
     
     let user: User
     

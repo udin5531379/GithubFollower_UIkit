@@ -12,6 +12,7 @@ class URItemInfoRepoSubClass: URItemInfoSuperClass {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureItems()
+        actionButtonPressed()
     }
     
     private func configureItems() {
@@ -25,7 +26,7 @@ class URItemInfoRepoSubClass: URItemInfoSuperClass {
     }
     
     @objc func buttonPressedAction(){
-        delegate?.didSelectGithubProfile()
+        delegate?.didSelectGithubProfile(for: user)
     }
     
 }

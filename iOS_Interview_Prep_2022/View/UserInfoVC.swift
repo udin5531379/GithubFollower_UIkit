@@ -7,10 +7,10 @@
 
 import UIKit
 
-protocol UserInfoVCDelegate {
+protocol UserInfoVCDelegate: AnyObject {
     
-    func didSelectGithubProfile()
-    func didSelectGetFollowers()
+    func didSelectGithubProfile(for user: User)
+    func didSelectGetFollowers(for user: User)
     
 }
 
@@ -23,6 +23,7 @@ class UserInfoVC: UIViewController {
     
     var itemViews : [UIView] = []
     
+    weak var delegate: FollowerListVCDelegate?
     
     var username: String
     init(username: String) {
@@ -127,13 +128,20 @@ class UserInfoVC: UIViewController {
 
 extension UserInfoVC: UserInfoVCDelegate {
     
-    func didSelectGithubProfile() {
-        //webkit
+    func didSelectGithubProfile(for user: User) {
+        showSafariView(for: user)
     }
     
-    func didSelectGetFollowers() {
-        //dismiss the VC and show the followers
-        print("did select Get follower tapped")
+    
+    func didSelectGetFollowers(for user: User) {
+        
+        guard user.followers != 0 else {
+            presentURAlertViewControllerOnTheMainThread(title: "No Followers", body: "Sorry this user has no followers", buttonTitle: "OK")
+            return
+        }
+        
+        self.dismiss(animated: true)
+        delegate?.getUsernameFromUserInfoVC(username: user.login)
     }
     
     

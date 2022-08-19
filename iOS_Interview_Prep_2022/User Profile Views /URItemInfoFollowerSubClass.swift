@@ -26,7 +26,7 @@ class URItemInfoFollowerSubClass: URItemInfoSuperClass {
     }
     
     @objc func buttonPressedAction() {
-        delegate?.didSelectGetFollowers()
+        delegate?.didSelectGetFollowers(for: user)
     }
     
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 fileprivate var containerView: UIView!
 
@@ -58,6 +59,21 @@ extension UIViewController {
         emptyView.frame = view.bounds
         view.addSubview(emptyView)
         
+    }
+    
+    func showSafariView(for user: User) {
+        
+        let url = URL(string: user.htmlUrl)
+        
+        guard let url = url else {
+            presentURAlertViewControllerOnTheMainThread(title: "Error", body: "The url for this user is invalid. Please try again later", buttonTitle: "OK")
+            return
+        }
+        
+        let safariVC = SFSafariViewController(url: url)
+        safariVC.preferredControlTintColor = .systemGreen
+        safariVC.modalPresentationStyle = .formSheet
+        present(safariVC, animated: true)
     }
     
 }
