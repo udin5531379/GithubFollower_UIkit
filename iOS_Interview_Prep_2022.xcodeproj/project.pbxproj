@@ -18,6 +18,7 @@
 		27DC6FA4289B77C600951D44 /* SecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6FA3289B77C600951D44 /* SecondaryTitleLabel.swift */; };
 		27DC6FA6289CCC2300951D44 /* URUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6FA5289CCC2300951D44 /* URUserInfoHeaderVC.swift */; };
 		27DC6FA8289EC99D00951D44 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC6FA7289EC99D00951D44 /* SFSymbols.swift */; };
+		27E7261428C14DCC0058B432 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7261328C14DCB0058B432 /* PersistanceManager.swift */; };
 		27F78648287164640017259A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F78647287164640017259A /* AppDelegate.swift */; };
 		27F7864A287164640017259A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F78649287164640017259A /* SceneDelegate.swift */; };
 		27F7864C287164640017259A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7864B287164640017259A /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 		27DC6FA3289B77C600951D44 /* SecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		27DC6FA5289CCC2300951D44 /* URUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URUserInfoHeaderVC.swift; sourceTree = "<group>"; };
 		27DC6FA7289EC99D00951D44 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
+		27E7261328C14DCB0058B432 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		27F78644287164640017259A /* iOS_Interview_Prep_2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Interview_Prep_2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F78647287164640017259A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27F78649287164640017259A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				27F78673287796900017259A /* NetworkManager.swift */,
+				27E7261328C14DCB0058B432 /* PersistanceManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				27F78648287164640017259A /* AppDelegate.swift in Sources */,
 				27DC6FA128958F7E00951D44 /* UserInfoVC.swift in Sources */,
 				27F7866F287776590017259A /* Follower.swift in Sources */,
+				27E7261428C14DCC0058B432 /* PersistanceManager.swift in Sources */,
 				27DC6FA6289CCC2300951D44 /* URUserInfoHeaderVC.swift in Sources */,
 				273D5DA428A6B68300D35E57 /* URItemInfoRepoSubClass.swift in Sources */,
 				27F7866028734D5B0017259A /* URButton.swift in Sources */,

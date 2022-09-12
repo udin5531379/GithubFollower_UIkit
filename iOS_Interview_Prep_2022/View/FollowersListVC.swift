@@ -59,6 +59,37 @@ class FollowersListVC: UIViewController {
         view.backgroundColor = .systemBackground
         navigationController?.title = username
         navigationController?.navigationBar.prefersLargeTitles = true
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(leftBarButtonItemTapped))
+        navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    @objc func leftBarButtonItemTapped(){
+        print("Plus clicked")
+        
+        NetworkManager.shared.getUser(username: username) { [weak self] results in
+            guard let self = self else { return }
+            
+            switch results {
+            case .success(let user):
+                
+                let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+                print(favorite)
+                
+                PersistanceManager.updateWith(favorite: favorite, actionType: .add) { error in
+                    print(favorite)
+                    guard let error = error else {
+                        self.presentURAlertViewControllerOnTheMainThread(title: "User added to favorites", body: "Success!!", buttonTitle: "OK")
+                        return
+                    }
+                    
+                    self.presentURAlertViewControllerOnTheMainThread(title: "Something went wrong", body: "\(error.rawValue)", buttonTitle: "OK")
+                    
+                 }
+            case .failure(let error):
+                self.presentURAlertViewControllerOnTheMainThread(title: "Sorry could not figure out which user you are trying to favorite!", body: "Launch the app again \(error)", buttonTitle: "OK")
+            }
+        }
+        
     }
     
     func configureSearchController() {

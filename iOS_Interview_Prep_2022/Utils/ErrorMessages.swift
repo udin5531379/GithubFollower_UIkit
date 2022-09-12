@@ -13,4 +13,6 @@ enum ErrorMessages: String, Error {
     case invalidResponse = "Invalid response. Please try again later"
     case noData = "Don't have the data."
     case failedDecode = "Failed to decode JSON data."
+    case failedToAddFavorites = "Failed to add this user to favorites. Please try again."
+    case alreayInFavourites = "This user is already in the favorites!"
 }
